@@ -1,0 +1,189 @@
+c .GT. - greater than.
+c .GE. - greater than or equal to.
+c .LE. - less than or equal to.
+c .LT. - less than.
+c .NE. - not equal to.
+c .EQ. - equal to.
+
+D .NOT. - monadic negation operator which gives . TRUE. if operand is . FALSE., for example, .NOT.(a .LT. b).
+D .AND. - logical and operator. . TRUE. if both operands are . TRUE. .
+D .OR. - logica I or operator. . TRUE. if at least one opera nd is . TRUE. .
+D .EQV. - . TRUE. if both operands are the same.
+D .NEQV. - . TRUE. if both operands are different.
+    
+
+CHARACTER(LEN=*), PARAMETER.. string = "abcdefgh"
+substrings can be taken,
+D string is 'abcdefgh' (the whole string),
+D string(1: 1) is 'a' (the first character),
+D string(2: 4) is 'bcd' (2nd, 3rd and 4th characters),
+D string(1) is an error (the substring must be specified from a position to a position, a single subscript is no good).
+D string(1:) is 'abcdefgh'.
+D string ( : 1) is 'a'.
+
+CHARACTER(LEN=4), PARAMETER:: name = "Coal"
+CHARACTER(LEN=10) :: song = "Firey"
+PRINT*, "Rowche "11"Rumble"
+PRINT*, song(1:1)llname(2:4) 
+
+
+D conditional execution statements (IF statements, and IF ... THEN ... ELSEIF... ELSE ... END IF);
+D loops, (DO ... END DO);
+D multi-way choice construct, (SELECT CASE);
+D unconditional jump statements, (GOTO);
+I/O exception branching, (ERR=, END=, EOR=);
+
+--------------------------------loops
+   integer i, n, sum
+ 
+      sum = 0
+      do 10 i = 1, n
+         sum = sum + i
+         write(*,*) 'i =', i
+         write(*,*) 'sum =', sum
+  10  continue
+
+--------------------------------------------
+      integer i
+ 
+      do 20 i = 10, 1, -2
+         write(*,*) 'i =', i
+  20  continue
+--------------------------------------------
+      do label  var =  expr1, expr2, expr3
+         statements
+label continue
+
+--------------------------------------------
+      integer i,j
+ 
+      read (*,*) j
+      do 20 i = 1, j
+         j = j + 1
+  20  continue
+      write (*,*) j
+--------------------------------------------
+
+ while (logical expr) do
+         statements
+      enddo
+
+--------------------------------------------
+label if (logical expr) then
+         statements
+         goto label
+      endif 
+--------------------------------------------
+     integer n
+
+     n = 1
+  10 if (n .le. 100) then
+        write (*,*) n
+        n = 2*n
+        goto 10
+     endif
+--------------------------------------------
+i = 0
+DO
+    i = i + 1
+    IF (i >= 50 .AND. i <= 59) CYCLE
+    IF (i > 100) EXIT
+    PRINT* "I is" i
+END DO
+PRINT*, "Loop finished. I now equals", i
+----------------------------------
+DO i = 1, 100, 1
+END DO
+---------------------------------
+DO; IF (a .NE. b) EXIT
+END DO
+----------------------------------
+
+
+SELECT CASE (i)
+CASE (3,5,7)
+    PRINT*,"i lS prime"
+CASE (10:)
+    PRINT*,"i lS > 10"
+CASE DEFAULT
+    PRINT*, "i is not prime and lS < 10"
+END SELECT
+
+-----------------------------------
+ACOS(x)
+ASIN(x)
+ATAN(x)
+ATAN2(y,x)
+COS(x)
+COSH(x)
+EXP(x)
+LOG(x)
+LOG10(x)
+SIN(x)
+SINH(x)
+SQRT(x)
+TAN(x)
+TANH(x)
+
+------------------------------
+
+ABS(a)
+AINT(a)
+ANINT(a)
+CEILING(a)
+CMPLX(x,y)
+DBLE(x)
+DIM(x,y)
+FLOOR(a)
+INT(a)
+MAX(a1,a2,a3,.. .)
+MIN(a1,a2,a3,.. .)
+MOD(a,p)
+MODULO(a,p)
+NINT(x)
+REAL (a)
+SIGN(a,b)
+
+-----------------------------
+
+ACHAR(i)
+ADJUSTL(str)
+ADJUSTR(str)
+CHAR(i)
+IACHAR(ch)
+ICHAR(ch)
+INDEX(str,substr)
+LEN(str)
+LEN_TRIM (str)
+LGE(str1,str2)
+LGT(str1,str2)
+LLE(str1,str2)
+LLT(str1,str2)
+REPEAT(str,i)
+SCAN(str,set)
+TRIM(str)
+VERIFY(str,set)
+
+-----------------------------
+
+REAL, DIMENSION(15) .. X
+REAL, DIMENSION(1:5,1:3) .. Y, Z
+
+B = RESHAPE(A,(/5,3/)) lS, see later
+A = PACK (B, . TRUE. ) lS, see later
+A = RESHAPE(B,(/10,8/)) lS, see later
+B = PACK(A, . TRUE.) lS, see later
+
+------------------------------
+
+Col. 1    : Blank, or a "c" or "*" for comments
+Col. 1-5  : Statement label (optional)
+Col. 6    : Continuation of previous line (optional)
+Col. 7-72 : Statements
+Col. 73-80: Sequence number (optional, rarely used today)
+
+------------------
+
+c The next statement goes over two physical lines
+      area = 3.14159265358979
+     +       * r * r
