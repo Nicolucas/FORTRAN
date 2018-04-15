@@ -1,17 +1,19 @@
 all:
 	clear
 	@echo "------------------------------------------------------"
-	gfortran $(FILE) -o Tester.out
+	gfortran $(FILE) -o Tester.exe
 	#gfortran -e $(FILE) #compile f77 to allow extended lines (more than the limit)
 	@echo ""
-	./Tester.out
+	./Tester.exe
 	@echo ""
 	@echo "------------------------------------------------------"
-	make clean
-	@echo ""
+
+
+%.o : %.f90
+	gfortran -c $< 
 
 clean:
-	rm -f *.out *.mod*
+	rm -f *.out *.mod* *.exe
 
 plot:
 	clear
