@@ -16,6 +16,8 @@ TODO
 ----------------------------
 >Expand Exercise database
 
+>Create a Subroutine Database
+
 >Makefile that includes some sweet ol' GNUPLOT
 
 >Exercise for data reading and writing
@@ -25,6 +27,10 @@ TODO
 >MCMC in Fortran
 
 >Memory allocation Fix
+
+>Integration
+
+>Fourier transform?
 
 _____________________
 By Jorge N. Hayek

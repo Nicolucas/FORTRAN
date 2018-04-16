@@ -1,9 +1,9 @@
         PROGRAM THEATR
         INTEGER ROW,COLUMN,NROWS,NCOLS
         LOGICAL SEATS
-        DIMENSION SEATS(2,2)
-        NCOLS=2
-        NROWS=2
+        PARAMETER (NCOLS=2, NROWS=2)
+        DIMENSION SEATS(NCOLS,NROWS)
+        
         
         DO 101 COLUMN=1,NCOLS
             DO 102 ROW=1,NROWS

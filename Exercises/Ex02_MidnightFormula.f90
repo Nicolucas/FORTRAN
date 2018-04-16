@@ -1,5 +1,5 @@
     PROGRAM QES
-        IMPLICIT NONE
+    IMPLICIT NONE
         INTEGER:: a, b, c, D
         REAL :: Real_Part, Imag_Part
 
