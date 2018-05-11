@@ -1,5 +1,5 @@
       PROGRAM Checker
-        INTEGER NUMBR
+        Double Precision NUMBR
         INTEGER I
         PRINT *,'Welcome to the program -Writing Out Statement-'
         PRINT *,' ENTER THE NUMBER OF READINGS'
