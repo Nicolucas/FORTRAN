@@ -11,6 +11,20 @@ all:
 	make clean
 	@echo ""
 
+
+Convert:
+	clear
+	@echo "------------------------------------------------------"
+	$(FC) Cl10_Binary_Conv.f -o Tester.exe
+	@echo ""
+	./Tester.exe <Data.dat
+	@echo ""
+	@echo "------------------------------------------------------"
+	make clean
+	@echo ""
+
+
+
 hello:
 	$(FC) Cl01_HelloWorld.f -o helloWorld
 	./helloWorld
