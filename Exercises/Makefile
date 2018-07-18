@@ -36,13 +36,20 @@ segfault :
 	$(FC) -fbounds-check $(FILE) -o Tester.exe
 	
 clean:
-	rm -f *.out *.mod* *.exe
+	rm -f *.out *.mod* *.exe 
 
 plot:
 	clear
-	@echo "----------------------PLOTTING--------------------"
-	@echo "File: " + $(FILE)
-	plot $(FILE)
+	@echo "------------------------------------------------------"
+	$(FC) Cl12_Chemical.f -o Tester.exe
+	@echo ""
+	./Tester.exe 
+	@echo ""
+	gnuplot GnuPlotting.dem
+	@echo ""
+	@echo "------------------------------------------------------"
+	make clean
+	@echo ""
 
 help:
 	@echo "Valid targets:"

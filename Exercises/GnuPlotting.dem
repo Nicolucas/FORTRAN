@@ -1,0 +1,13 @@
+#set terminal postscript eps color
+#set output 'plot.jpg'
+#set view map
+#plot 'Chemical.dat' index 0 with lines, '' index 1 with lines
+
+
+
+
+set terminal pngcairo font "arial,10" fontscale 1.0 size 1000, 1000 
+set output 'heatmaps.7.png'
+set dgrid3d
+splot "Chemical.dat" using 1:2:3 with pm3d
+#pause -1
